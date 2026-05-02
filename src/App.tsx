@@ -188,18 +188,6 @@ const App: React.FC = () => {
                     <span className="info-label">📊 수행 결과</span>
                     <span className="info-value" style={{ fontWeight: 600, color: 'var(--samsung-blue)', whiteSpace: 'pre-line' }}>{selectedProject.results}</span>
                   </div>
-                  <div className="info-item" style={{ background: 'var(--color-bg-secondary)', padding: '24px', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--samsung-blue)' }}>
-                    <span className="info-label" style={{ color: 'var(--samsung-black)' }}>🚀 문제 해결</span>
-                    <span className="info-value" style={{ whiteSpace: 'pre-line', marginTop: '8px' }}>{selectedProject.problemSolving}</span>
-                  </div>
-                  <div className="info-item">
-                    <span className="info-label">활용 기술</span>
-                    <div className="tech-tags">
-                      {selectedProject.technologies.map(tech => (
-                        <span key={tech} className="tech-tag">{tech}</span>
-                      ))}
-                    </div>
-                  </div>
                 </div>
               </div>
             </>

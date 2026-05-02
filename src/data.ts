@@ -2,84 +2,52 @@ export interface Project {
   id: string;
   title: string;
   summary: string;
-  period: string;
   background: string;
   role: string;
-  techStack: string[];
-  thumbnail: string;
+  actions: string;
+  results: string;
+  problemSolving: string;
+  technologies: string[];
   images: string[];
 }
 
 export const MAIN_PROJECTS: Project[] = [
   {
-    id: "m1",
-    title: "글로벌 이커머스 결제 플랫폼 MSA 전환",
-    summary: "Monolithic 시스템을 MSA로 성공적으로 분리 및 성능 개선",
-    period: "2024. 03 - 2025. 12",
-    background: "기존 단일 시스템의 한계로 인해 트래픽 스파이크 시 결제 지연 발생. 안정성과 확장성을 확보하기 위해 결제 도메인을 마이크로서비스로 분리할 필요성 대두.",
-    role: "결제 도메인 백엔드 아키텍처 설계 및 API 개발, 레거시 데이터 마이그레이션 전략 수립",
-    techStack: ["Java", "Spring Boot", "Kafka", "Redis", "Kubernetes", "AWS"],
-    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=1200&auto=format&fit=crop"
-    ]
+    id: 'fabrix',
+    title: '삼성SDS FabriX(에이전트 플랫폼) 개발',
+    summary: 'AI 에이전트 플랫폼 스토어 서비스 백엔드 및 인프라 구축',
+    background: '삼성SDS AI 플랫폼(FabriX) 내 임직원들이 다양한 AI 에이전트를 탐색·활용할 수 있는 스토어 생태계 구축 및 안정적인 백엔드 인프라 제공.',
+    role: '에이전트 스토어 도메인 백엔드 API 설계/개발 및 Kubernetes 기반 CI/CD 파이프라인 구축/운영 총괄.',
+    actions: '• FastAPI와 SQLAlchemy를 활용한 고성능 RESTful API 구현\n• Helm Chart 및 ArgoCD를 연동한 GitOps 기반 무중단 배포 환경 구축\n• 키워드와 벡터 검색을 결합한 하이브리드 검색 엔진 적용 검토 및 최적화',
+    results: '• 에이전트 스토어 서비스의 성공적인 런칭 및 운영 안정성 확보\n• 배포 자동화를 통한 운영 공수 절감 및 배포 이력 관리 효율화',
+    problemSolving: '비동기 처리 중 발생한 자원 충돌 해결 및 K8s 배포 환경 최적화 (상세 내용 보완 예정)',
+    technologies: ['FastAPI', 'Python', 'Kubernetes', 'ArgoCD', 'PostgreSQL', 'SQLAlchemy'],
+    images: ['/hero-image.png']
   },
   {
-    id: "m2",
-    title: "대규모 사용자 알림 시스템 파이프라인 구축",
-    summary: "초당 10만 건 이상의 푸시 알림 처리를 위한 실시간 데이터 파이프라인",
-    period: "2023. 06 - 2024. 02",
-    background: "마케팅 캠페인 시 발생하는 대량의 푸시 알림 요청을 지연 없이 처리하고, 전송 실패 시의 재시도 메커니즘을 견고하게 구축하기 위함.",
-    role: "메시지 큐 기반 비동기 처리 시스템 구현, 전송 모니터링 대시보드 백엔드 개발",
-    techStack: ["Kotlin", "Spring WebFlux", "RabbitMQ", "Elasticsearch", "Prometheus"],
-    thumbnail: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop"
-    ]
+    id: 'vehicle-nia',
+    title: 'NIA 운전자 제스처 데이터 수집 플랫폼 개발',
+    summary: '운전자 제스처 인식 AI 학습용 데이터 수집 및 검수 체계 구축',
+    background: '운전자 제스처 인식 AI 모델 학습용 대용량 영상 데이터 수집 및 효율적인 라벨링/검수 도구 개발.',
+    role: '영상 데이터 관리용 백엔드 API 및 실시간 영상 검수용 웹 인터페이스 개발.',
+    actions: '• Django 기반 대용량 파일 업로드/조회 API 구현 및 DB 스키마 설계\n• MediaPipe Hands를 연동한 실시간 제스처 인식 기반 영상 라벨링 기능 개발\n• Docker-compose를 활용한 서비스 배포 및 Nginx/Gunicorn 환경 구성',
+    results: '• 수만 건의 영상 데이터 수집 및 검수 공정의 안정적인 운영 완료\n• 웹 기반 저작 도구 도입으로 데이터 라벨링 및 검수 속도 향상',
+    problemSolving: '대용량 영상 업로드 지연 이슈 해결 및 브라우저 메모리 관리 최적화 (상세 내용 보완 예정)',
+    technologies: ['Python', 'Django', 'Javascript', 'MariaDB', 'MediaPipe', 'Docker'],
+    images: ['/hero-image.png']
   },
   {
-    id: "m3",
-    title: "사내 배포 자동화 및 CI/CD 플랫폼 개발",
-    summary: "개발 생산성 향상을 위한 Zero-downtime 배포 파이프라인 표준화",
-    period: "2022. 09 - 2023. 05",
-    background: "팀마다 상이한 배포 프로세스로 인한 운영 리스크 증가 및 배포 소요 시간 과다. 이를 표준화하고 자동화하여 개발 주기를 단축.",
-    role: "Jenkins Pipeline을 활용한 CI/CD 템플릿 개발, ArgoCD 기반 GitOps 환경 구축",
-    techStack: ["Jenkins", "ArgoCD", "Docker", "Kubernetes", "Shell Script"],
-    thumbnail: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=800&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop"
-    ]
+    id: 'digital-human',
+    title: 'AICA 심층 질의응답 디지털휴먼 서비스 개발',
+    summary: 'STT/NLP/TTS/비전 모델을 연계한 실시간 대화 서비스 개발',
+    background: '비대면 고객 대응을 위한 실시간 대화형 디지털 휴먼 서비스 프로토타입 구현.',
+    role: 'TTS 엔진 파인튜닝 및 실시간 대화 추론 파이프라인 구축/성능 튜닝.',
+    actions: '• Tacotron2 모델 파인튜닝을 통한 한국어 합성음 품질 고도화\n• Python 기반 오디오 전처리 자동화 및 이종 모델(STT-NLP-TTS) 연계 서버 구축',
+    results: '• 지연 시간을 최소화한 실시간 대화 파이프라인 성공적 구현\n• 자동화된 데이터 가공으로 모델 학습 준비 시간 단축',
+    problemSolving: '모델 연동 시 발생하는 Latency 단축 및 서버 자원 관리 이슈 해결 (상세 내용 보완 예정)',
+    technologies: ['Python', 'PyTorch', 'STT/TTS', 'Nvidia Docker', 'CentOS'],
+    images: ['/hero-image.png']
   }
 ];
 
-export const SIDE_PROJECTS: Project[] = [
-  {
-    id: "s1",
-    title: "개발자를 위한 기술 블로그 플랫폼 'TechLog'",
-    summary: "Markdown 기반의 빠르고 SEO 친화적인 블로그 서비스",
-    period: "2023. 01 - 2023. 04",
-    background: "기존 블로그 서비스들의 무거운 로딩 속도와 커스터마이징의 한계를 극복하고자 개인 맞춤형 플랫폼 개발.",
-    role: "Next.js 기반 프론트엔드 및 서버리스 백엔드 1인 개발",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    thumbnail: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=800&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=1200&auto=format&fit=crop"
-    ]
-  },
-  {
-    id: "s2",
-    title: "오픈소스 모니터링 CLI 툴 'OpsCLI'",
-    summary: "터미널에서 바로 확인하는 클러스터 상태 모니터링 도구",
-    period: "2022. 03 - 2022. 07",
-    background: "웹 대시보드에 접속하지 않고 터미널 환경에서 빠르게 주요 리소스 지표를 확인하기 위함.",
-    role: "Golang을 활용한 CLI 코어 로직 개발 및 K8s API 연동",
-    techStack: ["Golang", "Kubernetes API", "Cobra"],
-    thumbnail: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=800&auto=format&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=1200&auto=format&fit=crop"
-    ]
-  }
-];
+export const SIDE_PROJECTS: Project[] = [];

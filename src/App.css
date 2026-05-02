@@ -189,7 +189,7 @@
 }
 
 .card-title {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 12px;
   color: var(--samsung-black);
@@ -197,7 +197,7 @@
 }
 
 .card-summary {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--color-text-secondary);
   line-height: 1.5;
 }
@@ -373,9 +373,56 @@
   background: white;
 }
 
+/* Tech Stack Styles */
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.tech-stack-card {
+  background: var(--color-bg-secondary);
+  padding: 48px 32px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.tech-category-title {
+  font-size: 1.25rem;
+  color: var(--samsung-blue);
+  margin-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.tech-category-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+.tech-tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tech-pill {
+  padding: 6px 16px;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--samsung-black);
+}
+
 /* Footer */
 .footer {
-  padding: 48px 0;
+  padding: 80px 0;
   text-align: center;
   border-top: 1px solid var(--color-border);
   color: var(--color-text-secondary);
